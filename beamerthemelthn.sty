@@ -1,0 +1,141 @@
+% The University of Tennessee, Knoxville theme
+% Made by Enda Hargaden, July 2016
+% Theme mimicks the PPT format provided by UT
+
+\mode<presentation>
+
+% ---
+% PACOTES
+% ---
+
+% ---
+% Pacotes fundamentais 
+% ---
+\usepackage{listings}           % Permite uso de controle de listagem de código e algoritmos
+
+\renewcommand{\lstlistingname}{Listagem} % Modifica para escrever listagem em português
+
+\usepackage{multirow}           % Para uso de tabelas complexas
+%\usepackage{xcolor}      % Para uso de cores nas tabelas
+\usepackage{cmap}		% Mapear caracteres especiais no PDF
+\usepackage{lmodern}		% Usa a fonte Latin Modern			
+\usepackage[T1]{fontenc}	% Selecao de codigos de fonte.
+\usepackage[utf8]{inputenc}	% Codificacao do documento (conversão automática dos acentos)
+\usepackage{lastpage}		% Usado pela Ficha catalográfica
+\usepackage{indentfirst}	% Indenta o primeiro parágrafo de cada seção.
+\usepackage{color}		% Controle das cores
+\usepackage{graphicx}		% Inclusão de gráficos
+\usepackage{amsmath}            % Permite uso de \dddot e split
+\usepackage{pdfpages}           % Permite a inserção de pdfs inteiros no documento
+
+\usepackage{svg}                % Permite usar imagens vetorias formato svg
+\usepackage{algorithm}          % Para incluir pseudo código
+\usepackage{algorithmicx}       % Para incluir pseudo código
+\usepackage[noend]{algpseudocode} % Não sei porque o algoritm precisa disso...
+\usepackage{pdflscape}          % Para rotacionar o código fonte
+\usepackage{pdfpages}           % Complemento do anterior
+
+\definecolor{mygreen}{rgb}{0,0.8,0}
+
+% Configura o listings
+\lstset{
+  %  basicstyle=\footnotesize,\small,...\tiny
+  basicstyle=\ttfamily\scriptsize,
+  commentstyle=\color{mygreen},
+  numbers=left,
+  stepnumber=1,
+  showstringspaces=false,
+  tabsize=2,
+  breaklines=true,
+  breakatwhitespace=false
+ columns=fixed,
+ fontadjust=true,
+ basewidth=0.5em
+}
+
+% Use Helvetica, as requested
+\usepackage[scaled]{helvet}
+\usepackage[T1]{fontenc}
+\renewcommand\familydefault{\sfdefault}
+
+% Turn off those navigation symbols nobody uses
+\setbeamertemplate{navigation symbols}{}
+
+% Coloca a cor default do texto
+\setbeamercolor{normal text}{fg=black}
+%\usebeamercolor{normal text}
+
+% The new \br command creates a linebreak
+\newcommand{\br}{\vspace{\baselineskip}}
+
+%% As cores são minhas: LTHN, Vitor
+%\definecolor{LTHNblack}{RGB}{35, 31, 32} % Cor original (acinzentado, boa)
+\definecolor{LTHNblack}{RGB}{0, 0, 0}
+\definecolor{LTHNred}{RGB}{255, 0, 0}
+\definecolor{LTHNdarkgreen}{RGB}{0,71,49}
+
+% Cores para o footnote
+\setbeamercolor{footnote}{fg=LTHNdarkgreen}
+\setbeamercolor{footnote mark}{fg=LTHNdarkgreen}
+
+\setbeamercolor{frametitle}{fg = LTHNdarkgreen}
+\setbeamercolor{title}{fg = LTHNdarkgreen}
+
+% In case you choose to display the Table of Contents, or the Outline slide.
+\setbeamercolor{section in toc}{fg = LTHNdarkgreen}
+\setbeamercolor{section in toc shaded}{fg = LTHNblack}
+
+% The colour of all the items, subitems and and subsubitems
+\setbeamercolor{item}{fg = LTHNblack}
+\setbeamercolor{subitem}{fg = LTHNblack}
+\setbeamercolor{subsubitem}{fg = LTHNblack}
+\setbeamercolor{normal text}{fg = LTHNblack}
+
+\setbeamercolor{postit}{fg=white,bg=LTHNblack}
+\setbeamercolor{postthat}{fg=LTHNblack,bg=LTHNblack}
+\useinnertheme{rounded}
+
+
+\setbeamerfont{block title}{size={}}
+
+\setbeamertemplate{title page}{
+\begin{center}\vspace{0.5\baselineskip}
+{\Large \textcolor{LTHNdarkgreen}{\inserttitle}}
+
+\insertsubtitle
+
+\br
+
+{\large \insertauthor}
+
+\br
+{\small \insertinstitute}
+
+\br
+\insertdate
+
+\br
+
+\includegraphics[width=1.3in,keepaspectratio]{logo_capa_lthn}
+
+\end{center}
+}
+
+
+\addtobeamertemplate{footnote}{}{\vspace{3ex}}
+
+
+\defbeamertemplate*{footline}{}
+{
+\ifnum \insertpagenumber>1
+\vspace{-0.9cm}\begin{beamercolorbox}[sep=0em,ht=0.5cm,dp=0.3cm,wd=\paperwidth,leftskip=0cm,center]{postit}\parbox{0.333333\paperwidth}{{\tiny \insertshorttitle{} \insertframenumber{}} / \inserttotalframenumber}\parbox{0.333333\paperwidth}{ \hspace{0.01cm} }\parbox{0.31\paperwidth}{\hfill\includegraphics[width=2.2cm]{logo_lthn_invertido_notext}}\parbox{0.034\paperwidth}{ }\end{beamercolorbox}
+\else
+\vspace{-0.9cm}\begin{beamercolorbox}[sep=0em,ht=0.5cm,dp=0.3cm,wd=\paperwidth,leftskip=0cm,center]{postthat}\parbox{0.333333\paperwidth}{\hfill}\parbox{0.333333\paperwidth}{ \hspace{0.01cm} }\parbox{0.31\paperwidth}{\hfill}\parbox{0.034\paperwidth}{ }\end{beamercolorbox}
+
+\fi
+}
+\addtocounter{framenumber}{-1}
+
+
+\mode
+<all>
