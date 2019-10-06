@@ -96,7 +96,7 @@
 \begin{frame}
   \frametitle{Cluster}
   \framesubtitle{Characteristics}
-  What makes the LTH cluster so special and differentiate it from a bunch of ordinary computers?\\
+  What makes the LTHN cluster so special and differentiate it from a bunch of ordinary computers?\\
   \vspace{10px}
   \begin{itemize}
   \item It uses a \textbf{distributed filesystem}: the files are not contained in one or more physical disks in one machine, but \textbf{all} nodes (and the master) write and read files from any disk of the system. This non-trivial control is made by a special piece of dedicated software (to be mentioned ahead). 
@@ -108,8 +108,8 @@
 
 %-------------------------------------------------
 \begin{frame}
-  \frametitle{Distributed filesystem}
-  \framesubtitle{Works as a \textbf{huge} virtual disk}
+  \frametitle{Cluster}
+  \framesubtitle{Distributed filesystem: works as a \textbf{huge} virtual disk}
     \begin{center}
       \includegraphics[scale=0.65]{images/gluster.png}
     \end{center}
@@ -117,8 +117,8 @@
 
 %-------------------------------------------------
 \begin{frame}
-  \frametitle{Distributed filesystem}
-  \framesubtitle{In a practical way, systems atop of it see all storage space as one unique element}
+  \frametitle{Cluster}
+  \framesubtitle{Distributed filesystem: systems atop of it see all storage space as one unique element.}
     \begin{center}
       \includegraphics[scale=0.45]{images/cluster-gluster.png}
         \end{center}
@@ -159,24 +159,24 @@
 
 \subsection{Structural}
 %-------------------------------------------------
-\begin{frame}
-  \frametitle{Gluster: what is it? (Attention to the G!)}
-  \framesubtitle{It is a distributed filesystem: \textbf{GlusterFS}}
+%\begin{frame}
+%  \frametitle{Gluster: what is it? (Attention to the G!)}
+%  \framesubtitle{It is a distributed filesystem: \textbf{GlusterFS}}
 
-\textbullet  \textit{Free and open source software}:\\% exatamente! Gratuito e de código aberto (não que pensemos em modificá-lo...)\\
-\textbullet  Native to the system OS: installing and updating done trought official repository. Garanteed compatibility.
-  \vspace{10px}
-  Some of its features:
-  \begin{enumerate}
-  \item Mirroring;
-  \item Replication;
-  \item \textit{Striping};
-  \item Fault Tolerance;
-  \item Quotas;
-  \end{enumerate}
-  \vspace{10px}
-  Our system makes use of \textbf{replication}, \textbf{fault tolerance} and \textbf{quotas}.
-\end{frame}
+%\textbullet  \textit{Free and open source software}:\\% exatamente! Gratuito e de código aberto (não que pensemos em modificá-lo...)\\
+%\textbullet  Native to the system OS: installing and updating done trought official repository. Garanteed compatibility.
+%  \vspace{10px}
+%  Some of its features:
+%  \begin{enumerate}
+%  \item Mirroring;
+%  \item Replication;
+%  \item \textit{Striping};
+%  \item Fault Tolerance;
+%  \item Quotas;
+%  \end{enumerate}
+%  \vspace{10px}
+%  Our system makes use of \textbf{replication}, \textbf{fault tolerance} and \textbf{quotas}.
+%\end{frame}
 
 
 %
@@ -194,8 +194,8 @@
 
 %-------------------------------------------------
 \begin{frame}
-  \frametitle{Workload Manager}
-  \framesubtitle{\textit{Slurm}}
+  \frametitle{Software}
+  \framesubtitle{Workload Manager \textit{Slurm}}
 %  \textbullet The internals of \textit{slurm} workload system.\\
   \begin{figure}
   \centering\includegraphics[scale=0.35]{images/slurm-arch.png}
@@ -205,15 +205,27 @@
 
 %-------------------------------------------------
 \begin{frame}
-  \frametitle{Sistema de Monitoramento}
-  \framesubtitle{Ganglia}
- 
+  \frametitle{Software}
+  \framesubtitle{\textit{Slurm} Report and Queue commands example}
+%  \textbullet The internals of \textit{slurm} workload system.\\
+%  \begin{figure}
+  \centering\includegraphics[scale=0.45]{images/Screenshot_20190719_152935.png}
+%  \end{figure}
 \end{frame}
 
 %-------------------------------------------------
 \begin{frame}
-  \centering\includegraphics[scale=0.32]{images/ganglia_colors.png}
- 
+  \frametitle{Monitoring System}
+  \framesubtitle{Ganglia: detailed node load (\textbf{only six nodes shown})}
+  \centering\includegraphics[scale=0.36]{images/ganglia_nodes.png}
+\end{frame}
+
+
+%-------------------------------------------------
+\begin{frame}
+  \frametitle{Monitoring System}
+  \framesubtitle{Ganglia: Overview os system's load}
+  \centering\includegraphics[scale=0.40]{images/ganglia_rainbow.png}
 \end{frame}
 
 
@@ -221,7 +233,7 @@
 \subsection{Applications}
 \begin{frame}
   \frametitle{Software}
-  \framesubtitle{O que temos disponível?}
+  \framesubtitle{What do we have currently available?}
 %\centering
   \begin{itemize}
   \item \textbf{Serpent2 Monte Carlo};
@@ -231,18 +243,45 @@
   \item \textbf{SCALE 6.2.3};
   \item \textbf{Matlab}.
   \end{itemize}
+  \vspace{10px}
+  Disk space to accomodate other/new applications. 
 \end{frame}
+
+%-------------------------------------------------
+\begin{frame}
+  \frametitle{Software}
+  \framesubtitle{How to use it?}
+  A screenshot of the login session.\\
+  \vspace{10px}
+  \centering\includegraphics[scale=0.80]{images/p1login.png}
+\end{frame}
+
 
 \section{Conclusions}
 %-------------------------------------------------
 \begin{frame}
   \frametitle{Conclusions}
+  \framesubtitle{General considerations}
+  \begin{itemize}
+  \item Availability record: 98 days and 12 hours.
+  \end{itemize}
 \end{frame}
 
 \subsection{Future improvements}
 %-------------------------------------------------
 \begin{frame}
   \frametitle{Future improvements}
+  \framesubtitle{Where we want to be}
+  In such kind of system, there is always an enourmous list of possible improvements. We keep the list small as the size of the team that manages the system.
+  \vspace{10px}
+  Small, but not empty:
+  \vspace{10px}
+  \begin{itemize}
+  \item Use of GPU/accelerators for remote visualization (VirtualGL);
+  \item Improvement of measures to allow 'real' 24/7 availability, such as air-conditioning system and no-break connected to an existent diesel generator;
+  \item Control and automatic response to events such abrupt change in room's temperature and on-line monitoring of power supply.
+  \end{itemize}
+  
 \end{frame}
 
 %-------------------------------------------------
